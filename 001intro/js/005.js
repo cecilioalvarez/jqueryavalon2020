@@ -1,6 +1,6 @@
 
 function cambiar() {
-    
+
     var parrafo = document.getElementById("hola");
     var texto = document.createTextNode("adios1");
 
