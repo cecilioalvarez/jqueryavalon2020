@@ -1,0 +1,59 @@
+<html>
+<head>
+    <style>
+        .azul{
+            
+            color:blue;
+            
+        }
+        .verde{
+
+            color:green
+        }
+        .rojo{
+            color:red;
+            
+        }
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">
+
+
+// style= estulo etiqueta
+$(document).ready(function(){
+    //get element by id en jquery #
+    //añadir un elementosclick en un elemento :first
+    $("input").click(function(){
+        $("p").removeClass()
+
+    });
+$("#azul").click(function(){
+ //console.log("has pulsado")
+ //$("p").removeClass();
+ $("p:first").addClass("azul");
+});
+
+$("#rojo").click(function(){
+ //console.log("has pulsado")
+ //$("p").removeClass();
+ $("p:first").addClass("rojo");
+});
+});
+//jquery funciona sobre coleciond e cosas
+//es decir, no añade a solo un objeto sino a todos, ,lo mismo es 
+//1 parrafo que 8
+</script>
+</head>
+<body>
+<p >hola que tal</p>
+<p >hola que tal</p>
+<p >hola que tal</p>
+<input type="button" id="azul" value="pulsarAzul"/>
+<input type="button" id="rojo" value="pulsarRojo"/>
+
+
+
+</body>
+
+</html>
