@@ -1,7 +1,6 @@
 window.onload = function () {
 
     imprimirMayusculas("hola",asterisco)
-
 }
 
 function imprimirMayusculas(mensaje,formato) {
