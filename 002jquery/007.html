@@ -1,0 +1,72 @@
+<html>
+
+<head>
+    <style>
+        .azul {
+
+            color: blue;
+
+        }
+
+        .verde {
+
+            color: green
+        }
+
+        .rojo {
+            color: red;
+
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+        // style= estulo etiqueta
+
+        
+            //console.log("has pulsado")
+            //$("p").removeClass();
+            //lt=less than
+            $("tr:lt(4)").addClass("azul");
+            //gt=greater than
+            $("tr:eq(4)").addClass("verde");
+            $("tr:gt(4)").addClass("verde");
+           // $("tr:eq(4), tr:gt (4)").addClass("verde");
+           //este combina las dos anteriores
+      
+    });
+
+//jquery funciona sobre coleciond e cosas
+//es decir, no añade a solo un objeto sino a todos, ,lo mismo es 
+//1 parrafo que 8
+    </script>
+</head>
+
+<body>
+  <table>
+      <tr>
+        <td> Jesús</td>
+      </tr>
+      <tr>
+        <td> Joe</td>
+      </tr>
+      <tr>
+       <td>Fernando</td>
+      </tr>
+      <tr>
+        <td>Elena</td>
+      </tr>
+      <tr>
+        <td>Ana</td>
+      </tr>
+      <tr>
+        <td>Jose</td>
+      </tr>
+
+  </table>
+
+
+</body>
+
+</html>

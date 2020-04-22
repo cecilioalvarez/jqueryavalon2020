@@ -1,0 +1,179 @@
+<html>
+
+<head>
+  <style>
+    /*
+      td{
+        width: 130 px
+        border: 1px solid black;
+      }
+      */
+    .azul {
+
+      background-color: blue;
+      color: white;
+
+    }
+
+    .verde {
+
+      color: lightgreen
+    }
+
+    .rojo {
+      color: red;
+
+    }
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script type="text/javascript">
+
+    $(document).ready(function () {
+      // style= estulo etiqueta
+
+
+      //console.log("has pulsado")
+      //$("p").removeClass();
+      //lt=less than
+      let posicion = 0;
+
+      $("#button").click(function () {
+
+        $("tr:eq(" + posicion + ")").addClass("azul");
+      });
+
+      $("#mas").click(function () {
+        posicion++;
+
+        $("tr:eq(" + posicion + ")").addClass("azul");
+      });
+      //gt=greater than
+      $("#menos").click(function () {
+        posicion--;
+        $("tr").removeClass();
+        $("tr:eq(" + posicion + ")").addClass("azul");
+      });
+
+      $("tr").click(function () {
+        if ($(this).hasClass("azul")) {
+          $(this).removeClass("azul");
+        } else {
+          $(this).addClass("azul");
+          // o se puede : (hace lo mismo)
+          //$(this).toggleClass("azul");
+        }
+      });
+
+
+      $("#marcar").click(function () {
+        //marca ultima columna
+        //$("tr"). find ("td:last").addClass ("azul");
+        var total = 0
+        //marca el ultimo ultimosomo celda
+        //$("td:last").addClass ("azul");
+        $(".ultima").addClass("azul").each(function (indice) {
+          console.log($(this).text());
+          total += parseFloat($(this).text())
+        });
+        console.log(total);
+      });
+
+      $("#aprobado").click(function () {
+        $(".ultima").each(function () {
+          if (parseInt($(this).text()) >= 5) {
+            $(this).addClass("verde");
+          } else {
+            $(this).addClass("rojo");
+          };
+
+        });
+      });
+
+
+
+      $("#mayornota").click(function () {
+        var nota = 0;
+        var $tdSeleccionado;
+        $(".ultima").each(function () {
+          var columna = parseInt($(this).text());
+
+          if (columna > nota) {
+
+            nota = columna;
+            $tdSeleccionado = $(this);
+          }
+
+        });
+        console.log(nota);
+        $tdSeleccionado.addClass("azul");
+      });
+
+
+
+
+      $("#mayornota2").click(function () {
+        alert("no funciona");
+        var nota = 0;
+        var posicion = 0;
+        $(".ultima").each(function () {
+
+          if (nota <= parseFloat($("td:eq(" + posicion + ")".text()))) {
+            nota = $(this).text();
+            posicion++;
+            console.log(this);
+            console.log(posicion);
+
+          } else {
+            posicion++;
+          }
+
+        });
+        nota.addClass("azul");
+      });
+
+    });
+
+  </script>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td> Jesús</td>
+      <td class="ultima" />10</td>
+    </tr>
+    <tr>
+      <td> Jose</td>
+      <td class="ultima" />7</td>
+    </tr>
+    <tr>
+      <td>Miguel</td>
+      <td class="ultima" />5</td>
+    </tr>
+    <tr>
+      <td>Isabel</td>
+      <td class="ultima" />6.5</td>
+    </tr>
+    <tr>
+      <td>Gema</td>
+      <td class="ultima" />2</td>
+    </tr>
+    <tr>
+      <td>Pedro</td>
+      <td class="ultima" />4.9</td>
+    </tr>
+
+  </table>
+  <input type="button" value="pulsar" id="button" />
+  <input type="button" value="+" id="mas" />
+  <input type="button" value="-" id="menos" />
+  <input type="button" value="marcar" id="marcar" />
+  <input type="button" value="aprobado" id="aprobado" />
+  <input type="button" value="mayornota" id="mayornota" />
+  <input type="button" value="mayornota2" id="mayornota2" />
+
+
+
+</body>
+
+</html>
