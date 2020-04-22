@@ -26,78 +26,14 @@
 
     <script type="text/javascript">
 
+        let elementoRemove = function() {
+            $(this).remove()
+        }
+
         $(document).ready(function () {
 
-            let posicion = 0;
-
-            $("#boton1").click(function () {
-
-                $("tr:eq(" + posicion + ")").addClass("azul");
-
-            })
-
-            $("#mas").click(function () {
-                posicion++
-                $("tr").removeClass()
-                $("tr:eq(" + posicion + ")").addClass("azul");
-            })
-
-            $("#menos").click(function () {
-                posicion--
-                $("tr").removeClass()
-                $("tr:eq(" + posicion + ")").addClass("azul");
-            })
-
-            $("tr").click(function () {
-
-                $(this).remove()
-
-            })
-
-            $("#marcar").click(function () {
-                //Marca ultima columna
-                //$("tr").find("td:last").addClass("azul")
-                //Lo mismo pero utilizando la etiqueta class
-                //$(".ultima").addClass("azul")
-
-                var total = 0
-
-                $(".ultima").addClass("azul").each(function (indice) {
-                    total += parseInt($(this).text());
-                })
-
-                console.log(total)
-
-            })
-
-            $("#aprobados").click(function () {
-
-                $(".ultima").each(function (indice) {
-                    let nota = parseInt($(this).text())
-
-                    if (nota >= 5) {
-                        $(this).addClass("azul")
-                    }
-                })
-            })
-
-            $("#masAlta").click(function () {
-
-                var alta = 0
-                var fila = 0
-
-                $(".ultima").each(function (indice) {
-
-                    var nota = parseInt($(this).text())
-
-                    if (nota > alta) {
-                        alta = nota
-                        fila = indice
-                    }
-                })
-
-                $("tr:eq(" + fila + ")").addClass("azul")
-            })
+            $("tr").click(elementoRemove)
+            $("input").click(elementoRemove)
 
         })
 
@@ -131,13 +67,8 @@
             <td class="ultima">1</td>
         </tr>
     </table>
-    <input type="button" value="pulsar" id="boton1" />
-    <input type="button" value="+" id="mas" />
-    <input type="button" value="-" id="menos" />
+    <input type="button" value="botonEliminar" id="boton1" />
 
-    <input type="button" value="marcar" id="marcar" />
-    <input type="button" value="aprobados" id="aprobados" />
-    <input type="button" value="masAlta" id="masAlta" />
 </body>
 
 </html>
