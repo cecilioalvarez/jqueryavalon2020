@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <style>
+            /*
+            td{
+                width:150px;
+                border:1px solid black;
+            }
+            */
+            .azul{
+                background-color:blue;
+                color:white;
+                
+            }
+            .rojo{
+                color:red;
+            }
+            .verde{
+                color:green;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        
+        $(document).ready(function(){
+            let posicion=0;
+               $("#boton1").click(function(){
+                $("tr:eq("+posicion+")").addClass("azul");
+               })
+               $("#mas").click(function(){
+
+                   posicion++;
+                $("tr").removeClass();
+                $("tr:eq("+posicion+")").addClass("azul");
+               })
+               $("#menos").click(function(){
+
+                   posicion--;
+                   $("tr").removeClass();
+                   $("tr:eq("+posicion+")").addClass("azul");
+               })
+               $("tr").click(function(){
+                   
+                       $(this).toggleClass("azul");  
+               })
+               $("#marcar").click(function(){
+                  var total=0;
+                    //$("tr").find("td:last").addClass("azul");
+                   $(".ultima").addClass("azul").each(function(indice){
+                       //console.log(indice);
+                      total+=parseInt($(this).text());
+                   })
+                   console.log(total);
+                })
+
+
+                $("#aprobados").click(function(){
+                    $(".ultima").each(function(){
+                        if(parseInt($(this).text())>=5){
+                        $(this).addClass("azul");
+                    }
+                    })
+                    
+                })
+
+                $("#NotaAlta").click(function(){
+                    var nota=0;
+                    $(".ultima").each(function(){
+                        if(parseInt($(this).text())>=nota){
+                            nota=parseInt($(this).text());
+                            azul=$(this);
+                           console.log(this);
+                        }
+                        
+                    })
+                   azul.addClass("azul"); 
+
+                })
+        });
+        
+
+        </script>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>pedro</td>
+                <td class="ultima">5</td>
+            </tr>
+            <tr>
+                <td>juan</td>
+                <td class="ultima">7</td>
+            </tr>
+
+            <tr>
+                <td>miguel</td>
+                <td class="ultima">2</td>
+            </tr>
+            <tr>
+                <td>ana</td>
+                <td class="ultima">9</td>
+            </tr>
+            <tr>
+                <td>gema</td>
+                <td class="ultima">8</td>
+            </tr>
+            <tr>
+                <td>antonio</td>
+                <td class="ultima">1</td>
+            </tr>
+        </table>
+        <input type="button" value="pulsar" id="boton1"/>
+        <input type="button" value="+" id="mas"/>
+        <input type="button" value="-" id="menos"/> 
+        <input type="button" value="marcar" id="marcar"/> 
+        <input type="button" value="aprobados" id="aprobados"/> 
+        <input type="button" value="NotaAlta" id="NotaAlta"/>
+    </body>
+</html>

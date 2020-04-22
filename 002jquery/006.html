@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <style>
+            .azul{
+                color:blue;
+                
+            }
+            .rojo{
+                color:red;
+            }
+            .verde{
+                color:green;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        
+        $(document).ready(function(){
+                $("#azul").click(function(){
+                    $("p").removeClass().addClass("azul");
+                })
+              
+                $("#rojo").click(function(){
+                   
+                    $("p").removeClass().addClass("rojo");
+                })
+         });
+        
+
+        </script>
+    </head>
+    <body>
+        <p> hola que tal</p>
+        <input type="button" id="azul" value="pulsarAzul"/>
+        <input type="button" id="rojo" value="pulsarRojo"/>
+    
+    </body>
+</html>
