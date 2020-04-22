@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <style>
+        /*
+        td{
+            width:50px;
+            border: 1px solid black;
+        }
+        */
+
+        .azul {
+
+            background-color: blue;
+            color: white;
+        }
+
+        .rojo {
+
+            background-color: red;
+            color: white;
+        }
+
+        .verde {
+            color: green;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        let elementoRemove = function () {
+            $(this).remove();
+        };
+
+        $(document).ready(function () {
+
+            $("tr").click(elementoRemove);
+            $("input").click(elementoRemove);
+            //$(".botonBorrar").
+            alert("Al seleccionar boton borrar se elimina la fila");
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td class="ultima">5</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td class="ultima">7</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td class="ultima">2</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td class="ultima">9</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td class="ultima">8</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+            <td class="ultima">1</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+    </table>
+
+    <input type="button" value="botoneliminar" />
+
+</body>
+
+</html>
