@@ -50,7 +50,7 @@
 
             $("tr").click(function () {
 
-                $(this).toggleClass("azul");
+                $(this).remove()
 
             })
 
@@ -60,25 +60,43 @@
                 //Lo mismo pero utilizando la etiqueta class
                 //$(".ultima").addClass("azul")
 
-                var total=0
+                var total = 0
 
-                $(".ultima").addClass("azul").each(function(indice) {
+                $(".ultima").addClass("azul").each(function (indice) {
                     total += parseInt($(this).text());
                 })
 
                 console.log(total)
 
             })
-            
+
             $("#aprobados").click(function () {
 
-                $(".ultima").each(function(indice) {
+                $(".ultima").each(function (indice) {
                     let nota = parseInt($(this).text())
 
-                    if ( nota >= 5) {
+                    if (nota >= 5) {
                         $(this).addClass("azul")
                     }
                 })
+            })
+
+            $("#masAlta").click(function () {
+
+                var alta = 0
+                var fila = 0
+
+                $(".ultima").each(function (indice) {
+
+                    var nota = parseInt($(this).text())
+
+                    if (nota > alta) {
+                        alta = nota
+                        fila = indice
+                    }
+                })
+
+                $("tr:eq(" + fila + ")").addClass("azul")
             })
 
         })
@@ -119,6 +137,7 @@
 
     <input type="button" value="marcar" id="marcar" />
     <input type="button" value="aprobados" id="aprobados" />
+    <input type="button" value="masAlta" id="masAlta" />
 </body>
 
 </html>
