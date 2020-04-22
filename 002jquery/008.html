@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <style>
+        .azul {
+
+            color: blue;
+        }
+
+        .rojo {
+
+            color: red;
+        }
+
+        .verde {
+            color: green;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            //Selectores de posicion
+            //El que la posicion es igual a 4
+            $("tr:eq(4)").addClass("azul");
+            //Los que estan por debajo del 4 (fila 0, fila 1, fila 2 y fila 3)
+            $("tr:lt(4)").addClass("rojo");
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>pedro</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
