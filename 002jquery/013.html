@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <style>
+        /*
+        td{
+            width: 150px;
+            border: 1px solid black;
+        }
+        */
+        .azul {
+
+            background-color: blue;
+            color: white;
+
+        }
+
+        .rojo {
+
+            color: red;
+
+        }
+
+        .verde {
+
+            color: green;
+
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+
+let fRemove=function(){
+    $(this).remove();
+}
+        $(document).ready(function () {
+            $("tr").click(fRemove);
+            $("input").click(fRemove);
+            
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td class="ultima">5</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td class="ultima">7</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td class="ultima">2</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td class="ultima">9</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td class="ultima">8</td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+            <td class="ultima">1</td>
+        </tr>
+    </table>
+    <input type="button" value="eliminar"/>
+    
+
+   
+
+    
+    
+</body>
+
+</html>
