@@ -46,9 +46,41 @@
             })
 
             $("#marcar").click(function () {
-                $("td:odd").addClass("azul")
-            })
+                // $("tr").find("td:last").addClass("azul")
+                var total = 0;
 
+                $(".ultima").addClass("azul").each(function (indice) {
+                    total += parseInt($(this).text());
+                });
+                console.log(total);
+            });
+
+            $("#aprobados").click(function () {
+
+                $(".ultima").each(function () {
+                    var nota = parseInt($(this).text());
+                    if (nota >= 5) {
+                        $(this).addClass("azul")
+                    }
+                });
+            });
+
+            $("#notaAlta").click(function () {
+                var notaMax = 0;
+                $(".ultima").each(function () {
+                    var notaActual = parseInt($(this).text());
+                    if (notaMax <= notaActual) {
+                        notaMax = notaActual
+                    }
+                });
+
+                $(".ultima").each(function () {
+                    var notaActual = parseInt($(this).text());
+                    if (notaMax == notaActual) {
+                        $(this).addClass("azul")
+                    }
+                });
+            });
         });
 
     </script>
@@ -59,27 +91,27 @@
 
         <tr>
             <td>pedro</td>
-            <td> 8</td>
+            <td class="ultima">9</td>
         </tr>
         <tr>
             <td>juan</td>
-            <td> 5</td>
+            <td class="ultima">6</td>
         </tr>
         <tr>
             <td>miguel</td>
-            <td> 1</td>
+            <td class="ultima">1</td>
         </tr>
         <tr>
             <td>ana</td>
-            <td> 5</td>
+            <td class="ultima">5</td>
         </tr>
         <tr>
             <td>gema</td>
-            <td> 4</td>
+            <td class="ultima">4</td>
         </tr>
         <tr>
             <td>antonio</td>
-            <td> 6</td>
+            <td class="ultima">6</td>
         </tr>
 
     </table>
@@ -87,6 +119,8 @@
     <input type="button" value="+" id="mas">
     <input type="button" value="-" id="menos">
     <input type="button" value="marcar" id="marcar">
+    <input type="button" value="aprobados" id="aprobados">
+    <input type="button" value="notaAlta" id="notaAlta">
 
 
 </body>
