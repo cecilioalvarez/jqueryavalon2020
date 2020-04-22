@@ -1,0 +1,99 @@
+<html>
+    <head>
+        <style>
+            .azul{
+
+                background-color:blue;
+                color:white;
+                
+            }
+
+            .rojo{
+
+                color:red;
+            }
+
+            .verde {
+
+                color:green;
+            }
+
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/JAVASCRIPT">
+        
+        $(document).ready(function() {
+
+            let posicion=0;
+
+            $("#boton1").click(function() {
+
+                $("tr:eq("+posicion+")").addClass("azul");
+
+            })
+
+            $("#mas").click(function() {
+                $("tr:eq("+posicion+")").removeClass();
+                // otra opcion borra los estilos de todos los tr
+                // $("tr").removeClass();
+                posicion++;
+                $("tr:eq("+posicion+")").addClass("azul");
+            })
+
+            $("#menos").click(function() {
+                $("tr:eq("+posicion+")").removeClass();
+                posicion--;
+                $("tr:eq("+posicion+")").addClass("azul");
+            })
+
+            $("tr").click(function() {
+
+                if ($(this).hasClass("azul")) {
+
+                    $(this).removeClass("azul");
+                }else {
+
+                    $(this).addClass("azul");
+                }
+            })
+
+  
+
+        });
+
+
+        </script>
+    </head>
+    <body>
+
+        <table>
+            <tr>
+                <td>pedro</td>
+            </tr>
+            <tr>
+                <td>juan</td>
+            </tr>
+            <tr>
+                <td>miguel</td>
+            </tr>
+            <tr>
+                <td>ana</td>
+            </tr>
+            <tr>
+                <td>gema</td>
+            </tr>
+            <tr>
+                <td>antonio</td>
+            </tr>
+
+        </table>
+
+        <input type="button" value="pulsar" id="boton1"/>
+        <input type="button" value="+" id="mas"/>
+        <input type="button" value="-" id="menos"/>
+
+
+    </body>
+
+</html>

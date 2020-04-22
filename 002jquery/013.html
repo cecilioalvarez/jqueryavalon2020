@@ -1,0 +1,145 @@
+<html>
+    <head>
+        <style>
+            .azul{
+
+                background-color:blue;
+                color:white;
+                
+            }
+
+            .rojo{
+
+                color:red;
+            }
+
+            .verde {
+
+                color:green;
+            }
+
+        </style>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/JAVASCRIPT">
+        
+        $(document).ready(function() {
+
+            let posicion=0;
+
+            $("#boton1").click(function() {
+
+                $("tr:eq("+posicion+")").addClass("azul");
+
+            })
+
+            $("#mas").click(function() {
+                $("tr:eq("+posicion+")").removeClass();
+                // otra opcion borra los estilos de todos los tr
+                // $("tr").removeClass();
+                posicion++;
+                $("tr:eq("+posicion+")").addClass("azul");
+            })
+
+            $("#menos").click(function() {
+                $("tr:eq("+posicion+")").removeClass();
+                posicion--;
+                $("tr:eq("+posicion+")").addClass("azul");
+            })
+
+            $("tr").click(function() {
+
+               $(this).toggleClass("azul")
+            })
+
+
+            $("#notamayor").click(function() {
+                
+                var mayor=0;
+
+                $(".ultima").each(function(){
+
+                    if(parseInt($(this).text())>=mayor) {
+                        
+                        $("td").removeClass();
+                        $(this).addClass("rojo");
+                        mayor=parseInt($(this).text());
+                    }
+
+                });
+
+                
+            })
+
+            // otro metodo
+
+            $("#mayornota").click(function() {
+
+                var nota=0;
+                var tdSeleccionado;
+
+                $(".ultima").each(function() {
+
+                    var valorColumna=parseInt($(this).text());
+
+                    if (valorColumna > nota) {
+
+                        nota = valorColumna;
+                        $tdSeleccionado=$(this);
+                    }
+                });
+
+                $tdSeleccionado.addClass("azul");
+
+
+            });
+
+             
+
+        });
+
+
+        </script>
+    </head>
+    <body>
+
+        <table>
+            <tr>
+                <td>pedro</td>
+                <td class="ultima">5</td>
+            </tr>
+            <tr>
+                <td>juan</td>
+                <td class="ultima">7</td>
+            </tr>
+            <tr>
+                <td>miguel</td>
+                <td class="ultima">2</td>
+            </tr>
+            <tr>
+                <td>ana</td>
+                <td class="ultima">9</td>
+            </tr>
+            <tr>
+                <td>gema</td>
+                <td class="ultima">8</td>
+            </tr>
+            <tr>
+                <td>antonio</td>
+                <td class="ultima">1</td>
+            </tr>
+
+        </table>
+
+        <input type="button" value="pulsar" id="boton1"/>
+        <input type="button" value="+" id="mas"/>
+        <input type="button" value="-" id="menos"/>
+        
+        <input type="button" value="marcar" id="marcar"/>
+        <input type="button" value="notamayor" id="notamayor"/>
+        <input type="button" value="mayornota" id="mayornota"/>
+
+
+    </body>
+
+</html>
