@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <style>
+        .azul {
+            color: blue;
+            font-size: 20px;
+        }
+
+        .rojo {
+            color: red;
+            font-size: 12px;
+        }
+
+        .verde {
+            color: green;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("tr:eq(4)").addClass("azul")
+            $("tr:lt(4)").addClass("rojo")
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>pedro</td>
+        </tr>
+        <tr>
+            <td>jose</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<html>
+
+<head>
+    <style>
+        td {
+            width: 150px;
+            border: 1px solid black;
+
+        }
+
+        .azul {
+            color: white;
+            background-color: tomato;
+        }
+
+        .rojo {
+            color: red;
+            font-size: 12px;
+        }
+
+        .verde {
+            color: green;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            let posicion = 0;
+
+            $("#boton1").click(function () {
+
+                $("tr:eq(" + posicion + ")").addClass("azul");
+
+            })
+
+            $("#mas").click(function () {
+                posicion++
+                $("tr").removeClass()
+                $("tr:eq(" + posicion + ")").addClass("azul");
+            })
+
+            $("#menos").click(function () {
+                posicion--
+                $("tr").removeClass()
+                $("tr:eq(" + posicion + ")").addClass("azul");
+            })
+
+            $("tr").click(function () {
+
+                $(this).toggleClass("azul");
+
+            })
+
+            $("#marcar").click(function () {
+
+                alert("Corre plátano!")
+
+            })
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>jose</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td>1</td>
+        </tr>
+    </table>
+    <input type="button" value="pulsar" id="boton1" />
+    <input type="button" value="+" id="mas" />
+    <input type="button" value="-" id="menos" />
+
+    <input type="button" value="marcar" id="marcar" />
+</body>
+
+</html>
