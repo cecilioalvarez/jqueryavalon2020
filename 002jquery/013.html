@@ -32,13 +32,15 @@
 
 
 
-let fRemove=function(){
-    $(this).remove();
-}
+        let fRemove = function () {
+            $(this).remove();
+        }
+
         $(document).ready(function () {
             $("tr").click(fRemove);
             $("input").click(fRemove);
-            
+
+
         });
 
 
@@ -50,6 +52,8 @@ let fRemove=function(){
         <tr>
             <td>pedro</td>
             <td class="ultima">5</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+
         </tr>
         <tr>
             <td>juan</td>
@@ -72,13 +76,13 @@ let fRemove=function(){
             <td class="ultima">1</td>
         </tr>
     </table>
-    <input type="button" value="eliminar"/>
-    
+    <input type="button" value="eliminar" />
 
-   
 
-    
-    
+
+
+
+
 </body>
 
 </html>
