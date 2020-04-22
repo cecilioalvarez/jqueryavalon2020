@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <style>
+        .azul {
+
+            color: blue;
+
+        }
+
+        .rojo {
+
+            color: red;
+
+        }
+
+        .verde {
+
+            color: green;
+
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            // selectores de posicion
+            // el que laposicion es igual al 0
+            $("tr:eq(0)").addClass("azul");
+            // los que estan por encima del cero greater than
+            $("tr:gt(0)").addClass("rojo");
+
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>pedro</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+        </tr>
+    </table>
+   
+
+</body>
+
+</html>
