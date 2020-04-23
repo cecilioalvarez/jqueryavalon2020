@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <style>
+            .marca {
+                background-color: cornflowerblue;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        
+        $(document).ready(function() {
+
+            $("tr").click(function() {
+                $(this).toggleClass("marca")
+            })
+
+            $("#eliminar").click(function() {
+                $(".marca").remove()
+            })
+ 
+        });
+        
+        </script>
+    </head>
+    <body>
+        
+        <table>
+            <tr>
+                <td>javascript</td>
+            </tr>
+            <tr>
+                <td>java</td>
+            </tr>
+            <tr>
+                <td>php</td>
+            </tr>
+            <tr>
+                <td>python</td>
+            </tr>
+            <tr>
+                <td>html</td>
+            </tr>
+        </table>
+        
+        <input type="button" value="Eliminar marcadas" id="eliminar"/>
+    </body>
+</html>
