@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <style>
+        .azul {
+            background-color: rgb(0, 0, 255);
+            color: white;
+        }
+
+        .rojo {
+            color: red;
+        }
+
+        .verde {
+            color: green;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        let elementoRemove = function () {
+            $(this).remove();
+        }
+
+        $(document).ready(function () {
+            $(".botonBorrar").click(function () {
+
+                let borrar = confirm("¿Quieres borrar la fila?");
+                console.log(borrar);
+                if(borrar) ($(this).parent().parent().remove());
+
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <table>
+
+        <tr>
+            <td>pedro</td>
+            <td class="ultima">9</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td class="ultima">6</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td class="ultima">1</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td class="ultima">5</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td class="ultima">4</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+            <td class="ultima">6</td>
+            <td><input type="button" value="borrar" class="botonBorrar" /></td>
+        </tr>
+
+    </table>
+
+
+
+</body>
+
+</html>
