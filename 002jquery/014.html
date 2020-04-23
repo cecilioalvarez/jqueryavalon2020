@@ -30,15 +30,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript">
 
-        
-
-        $(document).ready(function () {
+       
+        $(document).ready(/*funcion anonima*/function () {
           
-                $("tr").click(function() {
+                
 
-                    $(this).remove();
+                $(".botonBorrar").click(function() {
+                        let borrar= confirm("¿ Quieres borrar la fila?");
+
+                       if (borrar) $(this).parent().parent().remove();
 
                 });
+                
 
         });
 
@@ -51,30 +54,36 @@
         <tr>
             <td>pedro</td>
             <td class="ultima">5</td>
+            <td><input type="button" value="borrar" class="botonBorrar"/></td>
         </tr>
         <tr>
             <td>juan</td>
             <td class="ultima">7</td>
+            <td><input type="button" value="borrar" class="botonBorrar"/></td>
         </tr>
         <tr>
             <td>miguel</td>
             <td class="ultima">2</td>
+            <td><input type="button" value="borrar" class="botonBorrar"/></td>
         </tr>
         <tr>
             <td>ana</td>
             <td class="ultima">9</td>
+            <td><input type="button" value="borrar" class="botonBorrar"/></td>
         </tr>
         <tr>
             <td>gema</td>
             <td class="ultima">8</td>
+            <td><input type="button" value="borrar" class="botonBorrar"/></td>
         </tr>
         <tr>
             <td>antonio</td>
             <td class="ultima">1</td>
+            <td><input type="button" value="borrar" class="botonBorrar"/></td>
         </tr>
     </table>
   
-
+    <input type="button" value="botoneliminar"/>
     
 
 </body>
