@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <style>
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#boton").click(function () {
+
+                var numero = parseInt($("#numero").val());
+
+                $("#zona").empty();
+
+                for (var i = 1; i <= 10; i++) {
+                    $("<p>" + numero*i + "</p>").appendTo("#zona");
+
+                }
+
+            });
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <input type="button" value="aceptar" id="boton" />
+    <input type="text" id="numero" />
+    <div id="zona">
+
+    </div>
+
+</body>
+
+</html>

@@ -28,16 +28,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script type="text/javascript">
 
-        let elementoRemove = function () {
-            $(this).remove();
-        };
-
         $(document).ready(function () {
 
-            $("tr").click(elementoRemove);
-            $("input").click(elementoRemove);
-            //$(".botonBorrar").
-            alert("Al seleccionar boton borrar se elimina la fila");
+            $(".botonBorrar").click(function() {
+                let borrar=confirm("¿Quieres borrar la fila?");
+
+                if (borrar) $(this).parent().parent().remove();
+            });          
 
         });
 

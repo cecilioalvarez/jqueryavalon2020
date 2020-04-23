@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <style>
+        #zona {
+            border: 1px solid black;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#boton").click(function () {
+
+                //$("#zona").append("<p>nuevo parrafo</p>");
+
+                $("<p>nuevo</p>").appendTo("#zona");
+            });
+
+        });
+
+
+    </script>
+</head>
+
+<body>
+    <input type="button" value="aceptar" id="boton" />
+    <div id="zona">
+
+    </div>
+
+</body>
+
+</html>

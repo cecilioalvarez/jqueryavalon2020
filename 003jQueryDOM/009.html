@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <style>
+        .rojo {
+
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+            $("tr").click(function () {
+                $(this).toggleClass("rojo");
+                console.log($(this).find("td:last").text());
+
+            });
+
+
+            $("#sumar").click(function () {
+
+                var suma = 0;
+
+                $(".rojo").each(function () {
+                    suma = suma + parseInt($(this).find("td:last").text());
+                });
+
+                console.log(suma);
+                $("body").append(suma);
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>7</td>
+        </tr>
+
+    </table>
+
+    <input type="button" value="sumar" id="sumar" />
+</body>
+
+</html>

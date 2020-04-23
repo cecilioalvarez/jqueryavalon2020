@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <style>
+        .rojo {
+
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+
+            $("tr").click(function () {
+
+                var suma = 0;
+                $(this).toggleClass("rojo"); 
+
+                $(".rojo").find("td:last").each(function () {
+                    suma+=parseInt($(this).text());
+                });
+
+                $("#resultado").text(suma);
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>7</td>
+        </tr>
+
+    </table>
+    <div id="resultado"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <style>
+        .rojo {
+
+            background-color: red;
+            color: white;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var $seleccionada;
+
+            $("#formulario").hide();
+
+            $("tr").click(function () {
+
+                $("tr").removeClass();
+                $seleccionada = $(this);
+                $seleccionada.toggleClass("rojo");
+                $("#formulario").show();
+
+                //console.log($(this).find("td:first").text());
+                //console.log($(this).find("td:last").text());
+                $("#nombre").val($seleccionada.find("td:first").text());
+                $("#apellido").val($seleccionada.find("td:last").text());
+            })
+
+            $("#salvar").click(function () {
+                cambiarTexto($seleccionada);
+            })
+
+
+
+        });
+
+        function cambiarTexto($seleccionada) {
+
+            $seleccionada.find("td:first").text($("#nombre").val());
+            $seleccionada.find("td:last").text($("#apellido").val());
+            $seleccionada.removeClass("rojo");
+            $("#formulario").hide();
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td>diaz</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td>gutierrez</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td>rollan</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>gomez</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>perez</td>
+        </tr>
+
+    </table>
+
+    <p><input type="button" id="botonborrar" value="eliminar" /></p>
+
+    <div id="formulario">
+
+        Informacion fila
+        <p>Nombre:<input type="text" name="nombre" id="nombre" /></p>
+        <p>Apellido:<input type="text" name="apellido" id="apellido" /></p>
+        <p><input type="button" id="salvar" value="salvar" /></p>
+
+    </div>
+
+</body>
+
+</html>
