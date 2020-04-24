@@ -1,0 +1,32 @@
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $("#pais").change(function() {
+                $.get("ciudades?pais="+$(this).val(), function(datos) {
+
+                    $("#ciudades").empty().append(datos)
+                })
+            })
+            
+        })
+
+        </script>
+
+    </head>
+
+    <body>
+        <select id="pais">
+            <option selected="True" disabled="true">Selecciona</option>
+            <option>España</option>
+            <option>UK</option>
+        </select>
+        <p>
+            <div id="ciudades">
+
+            </div>
+        </p>
+    </body>
+</html>

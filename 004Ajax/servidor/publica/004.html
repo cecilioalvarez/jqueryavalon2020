@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            let fila = 0
+
+            $("#siguiente").click(function () {
+                fila++
+
+                $.get("fila" + fila, function (datos) {
+
+                    $("#tabla").empty().append(datos)
+                })
+            })
+        })
+
+    </script>
+
+</head>
+
+<body>
+    <div id="tabla">
+        <table>
+            <tr>Fila inicial</tr>
+        </table>
+
+    </div>
+
+    <input type="button" value="Siguiente" id="siguiente">
+</body>
+
+</html>

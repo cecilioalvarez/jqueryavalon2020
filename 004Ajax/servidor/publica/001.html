@@ -1,0 +1,21 @@
+<html>
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function () {
+            $("#botonajax").click(function() {
+                $.get("datos", function(datos){
+                    $("body").append(datos)
+                })
+            })
+        })
+
+        </script>
+
+    </head>
+
+    <body>
+        <input type="button" value="ajax" id="botonajax">
+    </body>
+</html>
