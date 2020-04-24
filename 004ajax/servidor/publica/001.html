@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#botonNota").click(function () {
+
+                var nota = parseInt($("#nota").val());
+
+                $.get("/examen?nota=" + nota, function (resultado) {
+                    $("#verNota").html(resultado)
+
+                })
+
+            })
+
+        })
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <input type="button" value="Comprobar Nota" id="botonNota" />
+    <input type="text" id="nota" />
+    <p id="verNota"></p>
+
+</body>
+
+</html>
