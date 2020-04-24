@@ -30,6 +30,22 @@ app.get("/cuidades", function (req, res) {
     }
 });
 
+app.get("/fila1", function (req, res) {
+
+    res.send("<tr><td>fila1</td></tr>")
+
+});
+app.get("/fila2", function (req, res) {
+
+    res.send("<tr><td>fila2</td></tr>")
+
+});
+app.get("/fila3", function (req, res) {
+
+    res.send("<tr><td>fila3</td></tr>")
+
+});
+
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });

@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var contador = 0;
+
+            $("#siguiente").click(function () {
+                contador++;
+
+                if (contador == 1) {
+                    $.get("/fila1", function (datos) {
+                        $("#tabla").append(datos)
+                    })
+                }
+                if (contador == 2) {
+                    $.get("/fila2", function (datos) {
+                        $("#tabla").append(datos)
+                    })
+                }
+                if (contador == 3) {
+                    $.get("/fila3", function (datos) {
+                        $("#tabla").append(datos)
+                    })
+                }
+            })
+
+
+        })
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <input type="button" value="siguiente" id="siguiente" />
+    <table id="tabla">
+
+
+    </table>
+
+
+
+</body>
+
+</html>
