@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#botonNota").click(function () {
+
+                // leo la nota de la caja de texto
+
+                var nota = $("#nota").val();
+                //hago una peticion ajax que me devuelve 
+                // el calculo del resultado 
+                //pasando por la querystring el valor de la nota
+
+                $.get("/examen?nota=" + nota, function (resultado) {
+                    //añado ese valor al body
+                    $("#verNota").html(resultado);
+
+                })
+
+
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <input type="text" id="nota" />
+    <input type="button" value="validaNota" id="botonNota" />
+    <p id="verNota"></p>
+</body>
+
+</html>

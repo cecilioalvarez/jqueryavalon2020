@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#botonajax").click(function () {
+
+                //la funcion de callback de ajax
+                //4 segundos en llegar
+                $.get("/datos", function (datos) {
+                    // ya disponemos de los datos
+                    $("body").append(datos);
+
+                })
+
+
+
+
+            });
+
+            $("#tiempo").click(function () {
+
+                setInterval(function () {
+
+                    $("body").append("hola");
+
+                }, 1000);
+
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <input type="button" value="ajax" id="botonajax" />
+    <input type="button" value="tiempo" id="tiempo" />
+</body>
+
+</html>
