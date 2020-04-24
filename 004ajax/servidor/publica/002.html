@@ -1,0 +1,30 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#botonNota").click(function () {
+
+                var nota=$("#nota").val();
+
+                $.get("/examen?nota="+nota, function (resultado) {
+                    $("#verNota").html(resultado);
+                });
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <input type="text" id="nota"/>
+    <input type="button" value="validaNota" id="botonNota" />
+    <p id="verNota"></p>
+</body>
+
+</html>

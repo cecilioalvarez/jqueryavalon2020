@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            contador=0;
+
+            $("#botonajax").click(function () {
+
+                $.get("datos", function (datos) {
+
+                    $("body").append(datos);
+                });
+
+            });
+
+            $("#tiempo").click(function () {
+
+                setInterval(function () {
+
+                    $("body").append(contador++);
+
+                }, 1000);
+
+            });
+
+        });
+
+    </script>
+</head>
+
+<body>
+    <input type="button" value="ajax" id="botonajax" />
+    <input type="button" value="tiempo" id="tiempo" />
+</body>
+
+</html>
