@@ -12,40 +12,33 @@
                 contador++;
 
                 if (contador == 1) {
-                    $.get("/fila1", function (datos) {
+                    $.get("/fila"+contador, function (datos) {
                         $("#tabla").append(datos)
                     })
                 }
                 if (contador == 2) {
-                    $.get("/fila2", function (datos) {
+                    $.get("/fila"+contador, function (datos) {
                         $("#tabla").append(datos)
                     })
                 }
                 if (contador == 3) {
-                    $.get("/fila3", function (datos) {
+                    $.get("/fila"+contador, function (datos) {
                         $("#tabla").append(datos)
+                        contador=0;
                     })
                 }
             })
 
-
         })
 
-
     </script>
-
 </head>
 
-<body>
 
+<body>
     <input type="button" value="siguiente" id="siguiente" />
     <table id="tabla">
-
-
     </table>
-
-
-
 </body>
 
 </html>

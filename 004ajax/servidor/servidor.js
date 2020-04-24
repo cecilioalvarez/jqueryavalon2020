@@ -32,17 +32,17 @@ app.get("/cuidades", function (req, res) {
 
 app.get("/fila1", function (req, res) {
 
-    res.send("<tr><td>fila1</td></tr>")
+    res.send("<tr><td>1:1</td><td>1:2</td><td>1:3</td></tr>")
 
 });
 app.get("/fila2", function (req, res) {
 
-    res.send("<tr><td>fila2</td></tr>")
+    res.send("<tr><td>2:1</td><td>2:2</td><td>2:3</td></tr>")
 
 });
 app.get("/fila3", function (req, res) {
 
-    res.send("<tr><td>fila3</td></tr>")
+    res.send("<tr><td>3:1</td><td>3:2</td><td>3:3</td></tr>")
 
 });
 
