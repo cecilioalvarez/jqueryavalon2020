@@ -1,0 +1,84 @@
+<html>
+
+<head>
+    <style>
+        .azul {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            $("table").on("click","tr",function () {
+                $(this).toggleClass("azul");
+            });
+
+            $("#botonBorrar").click(function () {
+
+                $("tr").each(function () {
+
+                    if ($(this).hasClass("azul")) {
+                        $(this).remove();
+                    }
+                });
+            });
+
+            $("#insertar").click(function () {
+
+                var nombre = $("#nombre").val();
+                var apellido = $("#apellido").val();
+                $("#tabla").append("<tr><td>" + nombre + "</td><td>" + apellido + "</td></tr>");
+                $(":text").val("");
+
+            });
+
+        });
+
+
+    </script>
+
+</head>
+
+<body>
+
+    <input type="button" value="borrar" id="botonBorrar">
+    <input type="button" value="insertar" id="insertar">
+    <p>Nmbre:<input type="text" id="nombre"></p>
+    <p>Apellido:<input type="text" id="apellido"></p>
+
+    <table id="tabla">
+        <tr>
+            <td>pedro</td>
+            <td>bravo</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td>bravo</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td>bravo</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>bravo</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>bravo</td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+            <td>bravo</td>
+        </tr>
+    </table>
+
+
+</body>
+
+</html>

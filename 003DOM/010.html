@@ -1,0 +1,73 @@
+<html>
+
+<head>
+    <style>
+        .azul {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            var $nombre;
+
+            $("tr").click(function () {
+
+                $("tr").removeClass("azul");
+                $(this).addClass("azul")
+                $clonada = $(this).clone();
+            })
+
+            $("#clonar").click(function () {
+
+                $("body").append($clonada.text())
+
+
+            })
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <table id="tabla">
+        <tr>
+            <td>pedro</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+            <td>5</td>
+        </tr>
+    </table>
+
+    <input type="button" value="clonar" id="clonar">
+
+
+</body>
+
+</html>

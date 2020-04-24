@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <style>
+        .azul {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            var total = 0;
+
+            $("tr").click(function () {
+
+                $(this).toggleClass("azul")
+                var nota = parseInt($(this).find("td:last").text());
+                if ($(this).hasClass("azul")) {
+                    total = total + nota;
+                } else {
+                    total = total - nota;
+                }
+                $("#cajaSuma").val(total);
+            })
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+            <td>5</td>
+        </tr>
+    </table>
+
+    <input type="button" value="sumaTotal" id="suma">
+    <input type="text" id="cajaSuma">
+
+</body>
+
+</html>

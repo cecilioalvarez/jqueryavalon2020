@@ -16,9 +16,10 @@
             $("#boton").click(function () {
 
                 var numero = parseInt($("#numero").val());
-                $("p").remove();
-                for (var i = 0; i < numero; i++) {
-                    $("#zona").append("<p>"+(i+1)+"<p/>")
+                $("#zona").empty();
+                for (var i = 1; i <= 10; i++) {
+                    resultado= i*numero;
+                    $("#table").append("<p>"+resultado+"</p>");
                 }
 
             });

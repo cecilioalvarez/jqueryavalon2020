@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <style>
+        .azul {
+            background-color: blue;
+            color: white;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+             var $seleccionada;
+
+            $("#formulario").hide();
+
+            $("tr").click(function () {
+                $("tr").removeClass();
+                $seleccionada=$(this);
+                $(this).toggleClass("azul")
+                $("#formulario").show();
+
+                $("#nombre").val($(this).find("td:first").text());
+                $("#apellido").val($(this).find("td:last").text());
+
+            })
+
+            $("#salvar").click(function(){
+                cambiarTexto($seleccionada);
+            })
+
+        });
+
+        function cambiarTexto($seleccionada) {
+            $seleccionada.find("td:first").text($("#nombre").val());
+            $seleccionada.find("td:last").text($("#apellido").val());
+            $seleccionada.removeClass("azul");
+            $("#formulario").hide();
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td>bravo</td>
+        </tr>
+        <tr>
+            <td>juan</td>
+            <td>bravo</td>
+        </tr>
+        <tr>
+            <td>miguel</td>
+            <td>bravo</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>bravo</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>bravo</td>
+        </tr>
+        <tr>
+            <td>antonio</td>
+            <td>bravo</td>
+        </tr>
+    </table>
+
+    <input type="button" value="borrar" id="botonBorrar">
+
+    <div id="formulario">
+        Informacion fila:
+        <p>Nombre:<input type="text" id="nombre"></p>
+        <p>Apellido:<input type="text" id="apellido"></p>
+        <input type="button" value="salvar" id="salvar">
+    </div>
+
+
+</body>
+
+</html>
