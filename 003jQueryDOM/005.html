@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <style>
+            .verde {
+
+                background-color: green;
+            }
+
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        
+        $(document).ready(function() {
+
+
+            $("tr").click(function() {
+
+
+                $(this).toggleClass("verde");
+            })
+          
+            $("#botonBorrar").click(function() {
+
+                
+                $(".verde").remove();
+            })
+
+        });
+     
+
+        </script>
+    </head>
+    <body>
+           <table>
+               <tr>
+                   <td>pedro</td>
+                   <td>perez</td>
+               </tr>
+               <tr>
+                   <td>ana</td>
+                   <td>sanchez</td>
+               </tr>
+               <tr>
+                   <td>gema</td>
+                   <td>gomez</td>
+               </tr>
+               <tr>
+                   <td>maria</td>
+                   <td>blanco</td>
+               </tr>
+               <tr>
+                   <td>david</td>
+                   <td>gutierrez</td>
+               </tr>
+           </table>    
+           <input type="button" value="aceptar" id="botonBorrar"/>
+    </body>
+</html>

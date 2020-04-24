@@ -1,0 +1,76 @@
+<html>
+
+<head>
+    <style>
+        .verde {
+
+            background-color: green;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("tr").click(function () {
+
+                var total=0;
+                $(this).toggleClass("verde");
+
+
+                $(".verde").find("td:last").each(function () {
+
+                   total+=parseInt($(this).text());
+
+                })
+                $("#resultado").text(total);
+            })
+
+
+
+
+
+        });
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td>perez</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>sanchez</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>gomez</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>maria</td>
+            <td>blanco</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>david</td>
+            <td>gutierrez</td>
+            <td>2</td>
+        </tr>
+    </table>
+    <div id="resultado">
+
+    </div>
+
+
+</body>
+
+</html>

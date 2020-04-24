@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <style>
+            
+
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script type="text/javascript">
+        
+        $(document).ready(function() {
+
+
+            $("#boton").click(function() {
+
+
+             //var numero= parseInt($("#numero").val());
+             //string
+             var numero= $("#numero").val();
+             // sumar 2 (es un numero) + numero (string) 
+
+             // (numero)+(string)
+             // (string)+(string) // concatenar
+             console.log(2+ parseInt(numero));
+
+             // numero (string) i (numero)   comparacion  (numero)< (numero)
+             for (var i=0;i<numero;i++) {
+
+                $("<p>"+i+"</p>").appendTo("#zona");
+             }
+             
+            });
+
+           
+
+
+        
+
+        });
+     
+
+        </script>
+    </head>
+    <body>
+            <input type="button" value="aceptar"  id="boton"/>
+            <input type="text" id="numero" />
+            
+            <div id="zona">
+
+
+            </div>
+         
+
+    </body>
+</html>
