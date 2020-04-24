@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <style>
+        .marca {
+            background-color: cornflowerblue;
+
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("tr").click(function () {
+                $("tr").removeClass()
+                $(this).toggleClass("marca")
+
+            })
+
+            $("#duplicar").click(function() {
+                $(".marca").clone().appendTo("table")
+                $("tr").removeClass()
+            })
+
+
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>maria</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>david</td>
+            <td>3</td>
+        </tr>
+    </table>
+
+    <input type="button" id="duplicar" value="duplicar">
+
+    
+
+
+
+</body>
+
+</html>

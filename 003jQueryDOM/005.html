@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <style>
+        .marca {
+            background-color: cornflowerblue;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("table").on("click","tr", function () {
+                $(this).toggleClass("marca")
+            })
+
+            $("#eliminar").click(function () {
+                $(".marca").remove()
+            })
+
+            $("#insertar").click(function () {
+                var valor = $("#nuevo").val()
+
+                $("table").append(`<tr><td>${valor}</td></tr>`)
+                $(":text").val("")
+            })
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>javascript</td>
+        </tr>
+        <tr>
+            <td>java</td>
+        </tr>
+        <tr>
+            <td>php</td>
+        </tr>
+        <tr>
+            <td>python</td>
+        </tr>
+        <tr>
+            <td>html</td>
+        </tr>
+    </table>
+    <p>Lenguaje: <input type="text" id="nuevo"></p>
+
+    <p><input type="button" value="Insertar nuevo" id="insertar" /></p>
+    <p>
+        <input type="button" value="Eliminar marcadas" id="eliminar" />
+    </p>
+</body>
+
+</html>

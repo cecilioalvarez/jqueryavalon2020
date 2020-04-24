@@ -1,0 +1,87 @@
+<html>
+
+<head>
+    <style>
+        .marca {
+            background-color: cornflowerblue;
+
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            var $seleccionada
+
+            $("#formulario").hide()
+
+            $("tr").click(function() {
+                $("tr").removeClass()
+                $seleccionada=$(this)
+                $seleccionada.toggleClass("marca")
+                $("#formulario").show()
+                //console.log($(this).find("td:first").text())
+                //console.log($(this).find("td:last").text())
+                $("#nombre").val($seleccionada.find("td:first").text())
+                $("#apellidos").val($seleccionada.find("td:last").text())
+            })
+
+            $("#salvar").click(function() {
+
+                cambiarTexto($seleccionada)
+            })
+
+
+        });
+
+        function cambiarTexto($seleccionada) {
+            $seleccionada.find("td:first").text($("#nombre").val())
+            $seleccionada.find("td:last").text($("#apellidos").val())
+            $seleccionada.removeClass("marca")
+            $("#formulario").hide()
+        }
+
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>pedro</td>
+            <td>perez</td>
+        </tr>
+        <tr>
+            <td>ana</td>
+            <td>sanchez</td>
+        </tr>
+        <tr>
+            <td>gema</td>
+            <td>gomez</td>
+        </tr>
+        <tr>
+            <td>maria</td>
+            <td>blanco</td>
+        </tr>
+        <tr>
+            <td>david</td>
+            <td>gutierrez</td>
+        </tr>
+    </table>
+    <p>
+        <input type="button" value="Borrar " id="eliminar" />
+    </p>
+
+    <div id="formulario">
+
+        <p>Nombre: <input type="text" name="nombre" id="nombre"></p>
+        <p>Apellidos: <input type="text" name="apellidos" id="apellidos"></p>
+
+        <input type="button" value="Salvar" id="salvar" />
+
+    </div>
+
+</body>
+
+</html>
