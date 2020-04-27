@@ -46,6 +46,14 @@ app.get("/fila3", function (req, res) {
 
 });
 
+
+
+
+let libros = [{ "isbn": "1", "titulo": "java" }, { "isbn": "2", "titulo": "phyton" }];
+app.get("/libros", function (req, res) {
+    res.send(libros);
+})
+
 app.listen(3000, function () {
     console.log('Example app listening on port 3000!');
 });
