@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <style>
+
+
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#boton").click(function () {
+
+                let promesa1 = $.getJSON("libros2")
+                let promesa2 = $.getJSON("libros3")
+
+                $.when(promesa1, promesa2).done(function (datos1, datos2) {
+
+                    console.log(datos1[0], datos2[0])
+
+
+                    for (let libro of datos1[0]) {
+
+                        $("body").append(`<p>${libro.isbn},${libro.titulo}</p>`)
+                    }
+                    for (let libro of datos2[0]) {
+
+                        $("body").append(`<p>${libro.isbn},${libro.titulo}</p>`)
+                    }
+                })
+            })
+        })
+
+
+    </script>
+</head>
+
+
+<body>
+
+    <div id="mizona"></div>
+    <input type="button" value="cargarLibros" id="boton" />
+
+
+</body>
+
+</html>
