@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <style>
+        #mizona {
+            background-color: blue;
+            width: 200px;
+            height: 200px;
+            display: none;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            /*
+            $("#boton1").click(function () {
+                $("#mizona").slideUp();
+            })
+
+            $("#boton2").click(function () {
+                $("#mizona").slideDown();
+            })
+            */
+            $("#boton1").click(function () {
+                $("#mizona").fadeIn(5000);
+            })
+
+            $("#boton2").click(function () {
+                $("#mizona").fadeOut(7000);
+            })
+
+        });
+
+    </script>
+</head>
+
+<body>
+
+    <div id="mizona">
+
+    </div>
+
+    <input type="button" id="boton1" value="subir" />
+    <input type="button" id="boton2" value="bajar" />
+</body>
+
+</html>
