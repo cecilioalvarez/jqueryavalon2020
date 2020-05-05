@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#boton").click(function () {
+
+                // obtendremos los datos en un futuro
+                let promesa1 = $.getJSON("libros2");
+                let promesa2 = $.getJSON("libros3");
+                promesa1.then(function(datos) {
+
+                    console.log(datos);
+
+                })
+                /*
+                $.when(promesa1, promesa2).done(function (datos1, datos2) {
+
+                    console.log(datos1, datos2);
+
+                    for (let libro of datos1[0]) {
+
+                        $("body").append(`<p>${libro.isbn},${libro.titulo}</p>`);
+                    }
+                    for (let libro of datos2[0]) {
+
+                        $("body").append(`<p>${libro.isbn},${libro.titulo}</p>`);
+                    }
+
+                })
+                */
+                // etiqueta o control que produjo el evento
+                
+
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <table>
+
+
+    </table>
+    <input type="button" id="boton" value="cargarLibros" />
+</body>
+
+</html>

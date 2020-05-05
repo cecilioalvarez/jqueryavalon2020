@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            let contador = 1;
+
+            $.get(`/fila${contador}`, function (fila) {
+
+                $("table").html(fila);
+                contador++;
+
+            });
+
+            $("input").click(function () {
+
+                $.get(`/fila${contador}`, function (fila) {
+
+                    $("table").html(fila);
+                    contador++;
+
+                });
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <table>
+
+
+    </table>
+    <input type="button" value=">" />
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#boton").click(function () {
+               
+                $.getJSON("libros", function (listaLibros) {
+
+                  for (let libro of listaLibros) {
+
+                    $("body").append(`<p>${libro.isbn},${libro.titulo}</p>`);
+                  }
+
+
+                })
+
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <table>
+
+
+    </table>
+    <input type="button" id="boton" value="cargarLibros" />
+</body>
+
+</html>

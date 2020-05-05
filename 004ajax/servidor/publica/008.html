@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#boton").click(function () {
+
+                $.getJSON("libros2", function (listaLibros1) {
+
+                    $.getJSON("libros3", function (listaLibros2) {
+
+
+                        for (let libro of listaLibros1) {
+
+                            $("body").append(`<p>${libro.isbn},${libro.titulo}</p>`);
+                        }
+                        for (let libro of listaLibros2) {
+
+                            $("body").append(`<p>${libro.isbn},${libro.titulo}</p>`);
+                        }
+
+
+                    })
+
+                })
+
+
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+    <table>
+
+
+    </table>
+    <input type="button" id="boton" value="cargarLibros" />
+</body>
+
+</html>
